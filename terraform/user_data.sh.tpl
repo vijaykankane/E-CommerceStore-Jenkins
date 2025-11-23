@@ -22,7 +22,7 @@ systemctl enable docker
 systemctl start docker
 
 # Pull images from DockerHub (replace template variable)
-DOCKERHUB_USER="${dockerhub_user}"
+DOCKERHUB_USER="${DOCKERHUB_USER}"
 
 # container names & ports
 docker pull ${DOCKERHUB_USER}/user-service:latest || true

@@ -1,16 +1,5 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-  }
-  required_version = ">= 1.2.0"
-}
 
-provider "aws" {
-  region = var.aws_region
-}
+
 
 # VPC
 resource "aws_vpc" "this" {
@@ -121,10 +110,10 @@ resource "aws_instance" "app" {
   associate_public_ip_address = true
 
   # Optional key
-  key_name = length(trim(var.key_name)) > 0 ? var.key_name : null
+  key_name = var.key_name
 
   user_data = templatefile("${path.module}/user_data.sh.tpl", {
-    dockerhub_user = var.dockerhub_user
+    DOCKERHUB_USER = var.dockerhub_user
   })
 
   tags = {
