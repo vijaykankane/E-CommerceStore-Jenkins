@@ -43,6 +43,11 @@ Docker installed on the machine and images are pulled automatically
 all images automatically pulled and running 
 ![alt text](image/imageRunning.png)
 
+Fronend working fine post terraform apply
+
+![alt text](image/frontendWorking.png)
+
+
 terraform destroy post testing the same
 
 ![alt text](image/terraformDestrtory.png)
