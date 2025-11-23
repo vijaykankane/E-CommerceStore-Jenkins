@@ -38,12 +38,12 @@ done
 
 # Start backend services (bind to localhost ports - internal)
 docker run -d --name ecom-user --restart unless-stopped -p 127.0.0.1:3001:3001 ${DOCKERHUB_USER}/user-service:latest
-docker run -d --name ecom-products --restart unless-stopped -p 127.0.0.1:3002:3002 ${DOCKERHUB_USER}/products-service:latest
-docker run -d --name ecom-orders --restart unless-stopped -p 127.0.0.1:3003:3003 ${DOCKERHUB_USER}/orders-service:latest
+docker run -d --name ecom-products --restart unless-stopped -p 127.0.0.1:3002:3002 ${DOCKERHUB_USER}/product-service:latest
+docker run -d --name ecom-orders --restart unless-stopped -p 127.0.0.1:3003:3003 ${DOCKERHUB_USER}/order-service:latest
 docker run -d --name ecom-cart --restart unless-stopped -p 127.0.0.1:3004:3004 ${DOCKERHUB_USER}/cart-service:latest
 
 # Start frontend and map container port 3000 to host port 80 for public access
-docker run -d --name ecom-frontend --restart unless-stopped -p 80:3000 ${DOCKERHUB_USER}/frontend:latest
+docker run -d --name ecom-frontend --restart unless-stopped -p 80:3000 ${DOCKERHUB_USER}/frontend-service:latest
 
 # Simple health log
 echo "$(date) - Containers started:" > /var/log/ecom-containers.log

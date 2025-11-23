@@ -33,12 +33,20 @@ VPC creation with public subnet
 
 ![alt text](image/vpc-awsconsole.png)
 
+SG are created with the 3000 open for the frontend.
+![alt text](image/securiytGpurp.png)
+
+
 Docker installed on the machine and images are pulled automatically
 ![alt text](image/dockerinstalled.png)
 
+all images automatically pulled and running 
+![alt text](image/imageRunning.png)
 
-SG are created with the 3000 open for the frontend.
-![alt text](image/securiytGpurp.png)
+terraform destroy post testing the same
+
+![alt text](image/terraformDestrtory.png)
+
 
 
 
